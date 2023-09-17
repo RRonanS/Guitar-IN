@@ -1,0 +1,10 @@
+# Detalhamento da solução
+
+  A ideia partiu de um vídeo onde vi um rapaz jogando e zerando minecraft com um violão, controlando tudo a partir de notas no violão, onde cada nota tinha uma ação associada.
+  Dito isso, minha ideia é pegar uma guitarra e fazer com que ações que fazemos com mouse e teclado possam ser executadas a partir da guitarra. Para tanto usarei um adaptador 
+  Irig(IK multimidea) que conecta a guitarra ao notebook por meio de uma entrada p2. Estudando o seu funcionamento vi que ele recebe o sinal eletrônico analógico da guitarra, converte
+  para um sinal digital que é repassado ao computador, similar a como se tivesse utilizando um microfone. Dito isso, quero construir um driver linux que receba esses sinais do irig
+  e que eu construa um modelo de mapeamento de notas da guitarra para ações de mouse-teclado, de forma que quando eu toque tal nota na guitarra aconteça determinada ação podendo ser
+  um movimento do mouse ou entrada de um caractere.
+
+  As questões principais são como esses dados são recebidos, para que eu consiga processar-los e fazer o mapeamento e como eu aciono esses eventos de mouse-teclado.
