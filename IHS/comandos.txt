@@ -1,0 +1,8 @@
+# Compilar modulo
+    make
+# Subir modulo
+    sudo insmod output/guitarin.ko
+# Verificar informacoes do modulo
+    lsmod | grep guitarin
+# Remover modulo do nucleo
+    sudo rmmod guitarin
