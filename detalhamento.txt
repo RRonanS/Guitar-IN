@@ -8,3 +8,7 @@
   um movimento do mouse ou entrada de um caractere.
 
   As questões principais são como esses dados são recebidos, para que eu consiga processar-los e fazer o mapeamento e como eu aciono esses eventos de mouse-teclado.
+
+Bibliotecas encontradas durante pesquisa;
+  * Xlib - Simular movimento do mouse
+  * Subsistema de entrada do linux - Pode gerar eventos de teclas e mouse
