@@ -12,3 +12,4 @@
 Bibliotecas encontradas durante pesquisa;
   * Xlib - Simular movimento do mouse
   * Subsistema de entrada do linux - Pode gerar eventos de teclas e mouse
+  * ALSA - Advanced linux sound architeture; Pode ser usada para lidar com a placa de som da máquina, recebendo os sinais e passando a frente
