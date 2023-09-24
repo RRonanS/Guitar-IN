@@ -6,3 +6,12 @@
     lsmod | grep guitarin
 # Remover modulo do nucleo
     sudo rmmod guitarin
+# Listar dispositvos
+    lsusb
+# Log do kernel
+    dmesg
+
+# Caso a probe nao esteja sendo chamada;
+    sudo rmmod usbhid
+    sudo insmod guitarin
+    sudo insmod usbhid
