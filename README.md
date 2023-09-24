@@ -10,7 +10,7 @@ Semana 1 (Passada);
 
 Semana 2 (Em andamento);
 
-  - Hello world do programa
+  - Hello world do programa  OK
 
   - Obtenção e processamento inicial dos dados de entrada
 
