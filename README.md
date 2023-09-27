@@ -8,13 +8,13 @@ Semana 1 (Passada);
 
   -  Preparar ambiente de desenvolvimento  OK
 
-Semana 2 (Em andamento);
+Semana 2 (Passada);
 
   - Hello world do programa  OK
 
-  - Obtenção e processamento inicial dos dados de entrada
+  - Obtenção e processamento inicial dos dados de entrada  OK
 
-Semana 3;
+Semana 3 (Em andamento);
 
   - Tabelamento de entrada em saida
 
@@ -24,6 +24,6 @@ Semana 4;
 
   - Testes de integração
 
-  - Possível adição a algum jogo específico
+  - Criação da versão base da aplicação(Se houver tempo)
 
-  - Preparação da apresentação e correção de erros
+  - Preparação da apresentação, correção de erros e otimizações
