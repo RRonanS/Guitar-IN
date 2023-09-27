@@ -1,4 +1,4 @@
-Projeto referente a criar um driver para que receba sinais de guitarra via adaptador Irig e os converta em ações de mouse e teclado, com o objetivo final de jogar algum jogo com a guitarra(Guitar hero é a ideia inicial)
+Projeto referente a criar um driver para que receba sinais de guitarra via adaptador Irig e os converta em ações de mouse e teclado, com aplicação final de gerar tablaturas automaticamente
 
 Semana 1 (Passada);
 
