@@ -7,9 +7,8 @@
   e que eu construa um modelo de mapeamento de notas da guitarra para ações de mouse-teclado, de forma que quando eu toque tal nota na guitarra aconteça determinada ação podendo ser
   um movimento do mouse ou entrada de um caractere.
 
-  As questões principais são como esses dados são recebidos, para que eu consiga processar-los e fazer o mapeamento e como eu aciono esses eventos de mouse-teclado.
-
-Bibliotecas encontradas durante pesquisa;
-  * Xlib - Simular movimento do mouse
-  * Subsistema de entrada do linux - Pode gerar eventos de teclas e mouse
-  * ALSA - Advanced linux sound architeture; Pode ser usada para lidar com a placa de som da máquina, recebendo os sinais e passando a frente
+Bibliotecas a serem utilizadas;
+  * Pyaudio - biblioteca para capturar e armazenar entradas de áudio em python
+  * NumPY - Processamento do audio enquanto matriz
+  * Threading - biblioteca nativa do python para criar threads, dessa forma posso paralelizar partes do driver
+  * Uinput - Geração de eventos de mouse e teclado no linux
