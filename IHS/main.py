@@ -5,9 +5,9 @@ from frequencias import frequencias
 
 FORMAT = pyaudio.paInt16  # Formato de áudio
 CHANNELS = 1              # Número de canais de áudio (mono)
-RATE = 96000             # Taxa de amostragem (samples por segundo)
+RATE = 44100             # Taxa de amostragem (samples por segundo)
 CHUNK = 2048              # Tamanho do buffer de áudio
-RECORD_SECONDS = 1      # Duração da gravação em segundos
+RECORD_SECONDS = 0.1      # Duração da gravação em segundos
 TOLERANCIA = 5           # Tolerancia em Hz de variação de frequencia para as notas
 
 audio = pyaudio.PyAudio()
@@ -20,6 +20,7 @@ stream = audio.open(format=FORMAT, channels=CHANNELS,
 print("Iniciando...")
 
 frames = []
+min_freq, max_freq = utils.get_limiar(frequencias)
 
 
 def audio_input():
@@ -36,8 +37,9 @@ while 1:
     t_in.join()
 
     frequencia = utils.calcular_freq(frames, RATE)
-    print("Frequencia dominante:", frequencia)
-    print("Nota associada:", utils.find_note(frequencias, frequencia, TOLERANCIA))
+    if frequencia != 0 and min_freq <= frequencia <= max_freq:
+        print("Frequencia dominante:", frequencia)
+        print("Nota associada:", utils.find_note(frequencias, frequencia, TOLERANCIA))
     frames.clear()
 
 

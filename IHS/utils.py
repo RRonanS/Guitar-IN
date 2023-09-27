@@ -30,3 +30,9 @@ def find_note(v_freq, freq_dom, tol):
         else:
             left = mid + 1
     return None
+
+
+def get_limiar(v_freq):
+    """Retorna uma tupla de dois itens respectivamente a menor e maior frequencia que represente uma nota"""
+    sorted_freqs = sorted(v_freq.keys())
+    return sorted_freqs[0], sorted_freqs[len(sorted_freqs)-1]
