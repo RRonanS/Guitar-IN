@@ -16,7 +16,7 @@ Semana 2 (Passada);
 
 Semana 3 (Em andamento);
 
-  - Tabelamento de entrada em saida
+  - Tabelamento de entrada em notas  OK
 
   - Conversão de dados de entrada(notas da guitarra) em ações de mouse-teclado
 
