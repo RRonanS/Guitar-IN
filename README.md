@@ -34,7 +34,7 @@ Semana 4;
 
 1- Instale o modulo uinput;
 
-  modpobre uinput
+  modprobe uinput
 
 2- Navegue até o diretório onde está a pasta do programa e use o comando;
   
