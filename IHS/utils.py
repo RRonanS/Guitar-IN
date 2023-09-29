@@ -3,11 +3,15 @@ import numpy as np
 
 def calcular_freq(input, rate):
     """Dado um audio input e o rate retorna a frequencia dominante do audio"""
-    sinal = np.frombuffer(b''.join(input), dtype=np.int16)
-    stft = np.abs(np.fft.fft(sinal))
-    frequencia_dominante = np.argmax(stft)
-    frequencia_hz = frequencia_dominante * rate / len(sinal)
-    return frequencia_hz
+    try:
+        sinal = np.frombuffer(b''.join(input), dtype=np.int16)
+        stft = np.abs(np.fft.fft(sinal))
+        frequencia_dominante = np.argmax(stft)
+        frequencia_hz = frequencia_dominante * rate / len(sinal)
+        return frequencia_hz
+    except:
+        print('Erro')
+        return 0
 
 
 def find_note(v_freq, freq_dom, tol):
