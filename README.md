@@ -1,4 +1,5 @@
 Projeto referente a criar um driver para que receba sinais de guitarra via adaptador Irig e os converta em ações de mouse e teclado, com aplicação final de gerar tablaturas automaticamente
+Discente: Pedro Leão Nogueira Steinbach
 
 # Planejamento
 
