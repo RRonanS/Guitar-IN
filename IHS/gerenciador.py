@@ -1,9 +1,11 @@
 import uinput
 import json
+from utils import Fnc_Call
 
-MOUSE_SENSE = 10
-caps_lock = False
+MOUSE_SENSE = 10    # Sensibilidade do mouse
+caps_lock = False   # Indica se o caps_lock está ativado ou não
 
+# Configuracao de notas-teclas padrão
 teclas = {
     'A0': uinput.KEY_A,
     'A#0/Bb0': uinput.KEY_B,
@@ -53,15 +55,16 @@ mouse = {
     'D4': (uinput.BTN_RIGHT, 1)
     }
 
-
+# Inicialização do dispositivo de saída
 teclas_keys = list(teclas.values())
 mouse_events = [event[0] for event in mouse.values()]
 events = teclas_keys + mouse_events
 
 dispositivo = uinput.Device(events)
 
+
 def mapear(disp, entrada):
-    """Dado o dispositivo e uma entrada, mapeia a entrada para um evento"""
+    """Dado o dispositivo de saida e uma entrada, mapeia a entrada para um evento"""
     global caps_lock
     if entrada in mouse:
         if mouse[entrada][0] in (uinput.BTN_RIGHT, uinput.BTN_LEFT):
@@ -70,17 +73,26 @@ def mapear(disp, entrada):
         else:
             disp.emit(mouse[entrada][0], mouse[entrada][1]*MOUSE_SENSE)
     elif entrada in teclas:
-        if teclas[entrada] == uinput.KEY_CAPSLOCK:
-            if caps_lock:
-                print('Caps-lock OF')
-                caps_lock = False
-            else:
-                print('Caps-lock ON')
-                caps_lock = True
-        if caps_lock:
-            disp.emit_combo([uinput.KEY_CAPSLOCK, teclas[entrada]])
+        if isinstance(teclas[entrada], list):
+            # Caso seja uma palavra
+            for tecla in teclas[entrada]:
+                disp.emit_click(tecla)
+        elif isinstance(teclas[entrada], Fnc_Call):
+            # Caso seja uma chamada de funcao
+            teclas[entrada].funcao()
         else:
-            disp.emit_click(teclas[entrada])
+            # Teclas individuais
+            if teclas[entrada] == uinput.KEY_CAPSLOCK:
+                if caps_lock:
+                    print('Caps-lock OF')
+                    caps_lock = False
+                else:
+                    print('Caps-lock ON')
+                    caps_lock = True
+            if caps_lock:
+                disp.emit_combo([uinput.KEY_CAPSLOCK, teclas[entrada]])
+            else:
+                disp.emit_click(teclas[entrada])
 
 
 def load_teclas(arq):
@@ -88,14 +100,34 @@ def load_teclas(arq):
     try:
         with open(arq, 'r') as arquivo_json:
             dados = json.load(arquivo_json)
-        for key in dados['teclas']:
-            dados['teclas'][key] = getattr(uinput, dados['teclas'][key])
-        for key in dados['mouse']:
-            dados['mouse'][key][0] = getattr(uinput, dados['mouse'][key][0])
+
+        if 'teclas' in dados:
+            for key in dados['teclas']:
+                dados['teclas'][key] = getattr(uinput, dados['teclas'][key])
+
+        if 'mouse' in dados:
+            for key in dados['mouse']:
+                dados['mouse'][key][0] = getattr(uinput, dados['mouse'][key][0])
+
+        if 'palavras' in dados:
+            for key in dados['palavras']:
+                palavra = dados['palavras'][key]
+                temp = []
+                for letra in palavra:
+                    temp.append(getattr(uinput, f'KEY_{letra.upper()}'))
+                dados['teclas'][key] = temp
+
+        if 'funcoes' in dados:
+            for key in dados['funcoes']:
+                mod, fun = dados['funcoes'][key].split('.')
+                dados['teclas'][key] = Fnc_Call(mod, fun)
 
         global teclas, mouse, events
-        teclas = dados['teclas']
-        mouse = dados['mouse']
+
+        if 'teclas' in dados:
+            teclas = dados['teclas']
+        if 'mouse' in dados:
+            mouse = dados['mouse']
         teclas_keys = list(teclas.values())
         mouse_events = [event[0] for event in mouse.values()]
         events = teclas_keys + mouse_events

@@ -76,4 +76,16 @@ def inicializar_config():
                     "keys_dir": "",
                     "debug": False
                     }
+
+
+class Fnc_Call:
+    """Classe para armazenar a chamada de uma função"""
+    def __init__(self, modulo, funcao):
+        try:
+            modulo = __import__(modulo)
+            self.funcao = getattr(modulo, funcao)
+        except Exception as E:
+            self.funcao = self.NullFunc
     
+    def NullFunc():
+        return None

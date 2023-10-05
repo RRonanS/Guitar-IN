@@ -1,0 +1,11 @@
+{
+    "teclas": {
+        "A2": "KEY_SPACE"
+    },
+    "mouse": {
+    },
+    "palavras":{
+        "E2": "ola",
+        "F2": "mundo"
+    }
+}
