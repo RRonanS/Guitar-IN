@@ -10,5 +10,5 @@
 Bibliotecas a serem utilizadas;
   * Pyaudio - biblioteca para capturar e armazenar entradas de áudio em python
   * NumPY - Processamento do audio enquanto matriz
-  * Threading - biblioteca nativa do python para criar threads, dessa forma posso paralelizar partes do driver
+  * Scipy - Encontrar picos na frequencia sonora
   * Uinput - Geração de eventos de mouse e teclado no linux
