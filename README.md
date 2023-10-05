@@ -51,6 +51,8 @@ Semana 4 (Em andamento);
 
   pip install pyaudio
 
+  pip install scipy
+
 4 - É possível testar apenas a parte do uinput(caso não haja uma guitarra)
 
   Modifique o arquivo test.py conforme deseja testas, entrando com o json de mapeamento notas-teclas e setando as notas que serão testadas
