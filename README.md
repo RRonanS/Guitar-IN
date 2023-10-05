@@ -25,11 +25,11 @@ Semana 3 (Passada);
 
 Semana 4 (Em andamento);
 
-  - Testes de integração  HALF-OK
+  - Testes de integração  OK
 
-  - Criação da versão base da aplicação(Se houver tempo)
+  - Criação da versão base da aplicação(Se houver tempo)  NOT-OK
 
-  - Preparação da apresentação, correção de erros e otimizações
+  - Preparação da apresentação, correção de erros e otimizações  
 
 # Executar o código
 
@@ -50,4 +50,11 @@ Semana 4 (Em andamento);
   pip install python-uinput
 
   pip install pyaudio
+
+4 - É possível testar apenas a parte do uinput(caso não haja uma guitarra)
+
+  Modifique o arquivo test.py conforme deseja testas, entrando com o json de mapeamento notas-teclas e setando as notas que serão testadas
+
+  python test.py
+  
   
