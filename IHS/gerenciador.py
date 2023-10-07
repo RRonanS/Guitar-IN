@@ -2,7 +2,7 @@ import uinput
 import json
 from utils import Fnc_Call
 
-MOUSE_SENSE = 10    # Sensibilidade do mouse
+MOUSE_SENSE = 25    # Sensibilidade do mouse
 caps_lock = False   # Indica se o caps_lock está ativado ou não
 
 # Configuracao de notas-teclas padrão
@@ -41,7 +41,6 @@ teclas = {
     'E3': uinput.KEY_F,
     'F3': uinput.KEY_G,
     'F#3/Gb3': uinput.KEY_H,
-    'G#3/Ab3': uinput.KEY_I,
     'A#3/Bb3': uinput.KEY_J,
     'B3': uinput.KEY_CAPSLOCK
 }
@@ -49,9 +48,9 @@ teclas = {
 mouse = {
     'A3': (uinput.REL_X, 1),
     'G3': (uinput.REL_X, -1),
-    'G#4/Ab4': (uinput.REL_Y, 1),
-    'C#5/Db5': (uinput.REL_Y, -1),
-    'C5': (uinput.BTN_LEFT, 1), 
+    'C#4/Db4': (uinput.REL_Y, 1),
+    'G#3/Ab3': (uinput.REL_Y, -1),
+    'C4': (uinput.BTN_LEFT, 1), 
     'D4': (uinput.BTN_RIGHT, 1)
     }
 
