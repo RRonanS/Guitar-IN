@@ -65,5 +65,8 @@ Semana 4 (Passada);
   # Vídeo da instalação
 
   https://www.youtube.com/watch?v=tmLL1RngJ5U
-  
+
+  # Apresentação
+
+  https://docs.google.com/presentation/d/1tN87zwQ_mQpr2aL7gzJJ0I_Iw3oN_qP2L1FVNskfvQE/edit?usp=sharing
   
