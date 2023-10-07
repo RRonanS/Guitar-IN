@@ -1,7 +1,7 @@
 {
     "device_index": 2,
-    "ask_device": false,
+    "ask_device": true,
     "load_keys": false,
-    "keys_dir": "",
+    "keys_dir": "data/teclas_demo.json",
     "debug": true
 }
