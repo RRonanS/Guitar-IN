@@ -28,8 +28,6 @@ Semana 4 (Passada);
 
   - Testes de integração  OK
 
-  - Criação da versão base da aplicação(Se houver tempo)  OK
-
   - Preparação da apresentação, correção de erros e otimizações  OK  
 
 # Executar o código
