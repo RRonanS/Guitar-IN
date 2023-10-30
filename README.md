@@ -1,35 +1,5 @@
 Projeto referente a criar um driver para que receba sinais de guitarra/violão como microfone via adaptador Irig e os converta em ações de mouse e teclado.
 
-Discente: Pedro Leão Nogueira Steinbach
-
-# Planejamento
-
-Semana 1 (Passada);
-
-  -  Verificar viabilidade da ideia  OK
-
-  -  Selecionar frameworks se for o caso  OK
-
-  -  Preparar ambiente de desenvolvimento  OK
-
-Semana 2 (Passada);
-
-  - Hello world do programa  OK
-
-  - Obtenção e processamento inicial dos dados de entrada  OK
-
-Semana 3 (Passada);
-
-  - Tabelamento de entrada em notas  OK
-
-  - Conversão de dados de entrada(notas da guitarra) em ações de mouse-teclado  OK
-
-Semana 4 (Passada);
-
-  - Testes de integração  OK
-
-  - Preparação da apresentação, correção de erros e otimizações  OK  
-
 # Executar o código
 
 1- Instale o modulo uinput;
